@@ -15,10 +15,7 @@ Pod::Spec.new do |s|
   s.social_media_url          = "http://twitter.com/rollbar"
   s.ios.deployment_target     = '9.0'
   s.osx.deployment_target     = '10.12'
-  s.source                    = { :git => "https://github.com/rollbar/rollbar-ios.git",
-                           :tag => "v#{s.version}",
-                           :submodules => true
-                           }
+  s.source                    = { :git => "https://github.com/darkstoregh/rollbar-ios.git", :submodules => true }
   
   s.source_files        = 'KSCrash/Source/KSCrash/**/*.{m,h,mm,c,cpp}',
 
@@ -136,14 +133,7 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig = {
     "USE_HEADERMAP" => "NO",
-    "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/Rollbar/**\"",
-    "ONLY_ACTIVE_ARCH" => "YES",
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64"
-  }
-  
-  s.user_target_xcconfig      = {
-    "ONLY_ACTIVE_ARCH" => "YES",
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64"
+    "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/Rollbar/**\""
   }
 
 end
